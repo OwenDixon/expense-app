@@ -15,7 +15,7 @@ module.exports = (env) => {
   const CSSExtract = new ExtractTextPlugin('styles.css');
 
   return {
-    entry: './src/app.js',
+    entry: './src/app.jsx',
     output: {
       path: path.join(__dirname, 'public', 'dist'),
       filename: 'bundle.js'
@@ -23,7 +23,7 @@ module.exports = (env) => {
     module: {
       rules: [{
         loader: 'babel-loader',
-        test: /\.js$/,
+        test: /\.jsx$/,
         exclude: /node_modules/
       }, {
         test: /\.s?css$/,
