@@ -1,5 +1,6 @@
 import expensesReducer from '../../reducers/expenses.jsx';
 import expenses from '../fixtures/expenses.jsx';
+import { setExpenses } from '../../actions/expenses';
 
 
 test('should set up the default expenses array', () => {
@@ -76,4 +77,16 @@ test('should not edit an existing expense because id is incorrect', () => {
 
     expect(state).toEqual(expenses);
 
-    });
+});
+
+test('should set expenses', () => {
+
+    const action = {
+        type: 'SET_EXPENSES',
+        expenses: [expenses[1]]
+    };
+
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual([expenses[1]]);
+
+});
