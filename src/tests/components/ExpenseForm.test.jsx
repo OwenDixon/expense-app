@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import moment from 'moment';
-import ExpenseForm from '../../components/ExpenseForm';
-import expenses from '../fixtures/expenses';
+import ExpenseForm from '../../components/ExpenseForm.jsx';
+import expenses from '../fixtures/expenses.jsx';
 
 test('should render ExpenseForm correctly', () => {
   const wrapper = shallow(<ExpenseForm />);

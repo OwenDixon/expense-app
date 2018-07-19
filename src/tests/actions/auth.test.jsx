@@ -1,19 +1,17 @@
-import {login, logout} from '../../actions/auth.jsx';
+import { login, logout } from '../../actions/auth.jsx';
 
 test('should generate login action object', () => {
-
-    const uid = '12345';
-    const action = login(uid);
-    expect(action).toEqual({
-        type: 'LOGIN',
-        uid
-    });
+  const uid = 'abc123';
+  const action = login(uid);
+  expect(action).toEqual({
+    type: 'LOGIN',
+    uid
+  });
 });
 
 test('should generate logout action object', () => {
-
-    const action = logout();
-    expect(action).toEqual({
-        type: 'LOGOUT'
-    });
+  const action = logout();
+  expect(action).toEqual({
+    type: 'LOGOUT'
+  });
 });

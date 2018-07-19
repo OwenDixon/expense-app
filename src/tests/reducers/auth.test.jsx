@@ -1,25 +1,18 @@
-import authReducer from '../reducers/auth.test.jsx';
-import { bindActionCreators } from '../../../../../../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/redux';
-import { stat } from 'fs';
+import authReducer from '../../reducers/auth.jsx';
 
-test('should set up default auth state', () => {
-    const state = authReducer(undefined, '@@INIT');
-    expect(state).toEqual({});
+test('should set uid for login', () => {
+  const action = {
+    type: 'LOGIN',
+    uid: 'abc123'
+  };
+  const state = authReducer({}, action);
+  expect(state.uid).toBe(action.uid);
 });
 
-test('should set up user state as logged in', () => {
-    const action = {
-        type: 'LOGIN',
-        uid: '12345'
-    };
-    const state = authReducer(undefined, action);
-    expect(state.uid).toBe(action.uid);
-
-});
-
-test('should set up user state as logged out', () => {
-
-    const state = authReducer({uid:'12345'}, {type: 'LOGOUT'});
-    expect(state).toEqual({});
-
+test('should clear uid for logout', () => {
+  const action = {
+    type: 'LOGOUT'
+  };
+  const state = authReducer({ uid: 'anything' }, action);
+  expect(state).toEqual({});
 });
