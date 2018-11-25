@@ -5,8 +5,8 @@ import { startLogin } from '../actions/auth.jsx';
 export const LoginPage = ( { startLogin } ) => (
   <div className="box-layout">
     <div className="box-layout__box">
-      <h1 className="box-layout__title">Expensify</h1>
-      <p>Time to get you expenses under control</p>    
+      <h1 className="box-layout__title">Xpense</h1>
+      <p className="margin-bottom-medium">Control your expenses</p>    
       <button className="button button--login" onClick={startLogin}>Login</button>
     </div>
   </div>

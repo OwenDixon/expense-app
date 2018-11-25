@@ -1,7 +1,7 @@
 .button {
-  background-color: $blue;  
-  border: none;
-  border-radius: 5px;
+  background-color: $purple;  
+  border: 1px solid $purple;
+  border-radius: 2px;
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
@@ -10,16 +10,35 @@
   line-height: 1;
   padding: $s-size;
   text-decoration: none;
+  transition: all .4s ease-in-out;
+
+  &:hover {
+    color: $dark-blue;
+    border: 1px solid $purple;
+    background-color: #fff;
+  }
+
 }
 
 .button--link {
+  color: #fff;
   background: none;
   border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size-large;
+  font-weight: 300;
+  line-height: 1;
+  padding: $s-size;
+  text-decoration: none;
+  transition: all .4s ease-in-out;
+
 }
 
 .button--login {
-  border: 1px solid #4f4f4f;;
-  border-radius: 5px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 2px;
   cursor: pointer;
   display: inline-block;
   font-size: $font-size-large;
@@ -27,12 +46,13 @@
   overflow: hidden;
   padding: 12px $xl-size;
   position: relative;
-  transition: all 0.2s ease-in;
+  width: 20rem;
+  transition: all 0.4s ease-in;
   
   &:hover {
-    color: #ffffff;
-    border: 1px solid $blue;
-    background-color: $blue;
+    color: $dark-blue;
+    border: 1px solid #fff;
+    background-color: #fff;
   }
 
 }
